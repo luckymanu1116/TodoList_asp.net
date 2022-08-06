@@ -1,0 +1,26 @@
+@model TodoModel;
+@{
+    ViewData["Title"] = @Model.Name + " Delete";
+}
+<div class="row">
+    <div class="col-12 col-md-6">
+        <h3>Are you sure to delete ?</h3>
+        <div class="card">
+
+            <div class="card-body">
+               
+                <h5>
+                    Name: @Model.Name
+                </h5>
+                
+
+            </div>
+            <div class="card-footer">
+                <form asp-controller="Todo" asp-action="DeleteTodo" asp-route-id="@Model.Id" method="delete">
+                    <button class="btn btn-block btn-danger" type="submit">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
